@@ -1,0 +1,109 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "state_digit[0]",
+					"strict" : false
+				},
+				{
+					"name" : "state_digit[1]",
+					"strict" : false
+				},
+				{
+					"name" : "state_digit[2]",
+					"strict" : false
+				},
+				{
+					"name" : "state_digit[3]",
+					"strict" : false
+				},
+				{
+					"name" : "state_digit[4]",
+					"strict" : false
+				},
+				{
+					"name" : "state_digit[5]",
+					"strict" : false
+				},
+				{
+					"name" : "state_digit[6]",
+					"strict" : false
+				},
+				{
+					"name" : "output_digit[0]",
+					"strict" : false
+				},
+				{
+					"name" : "output_digit[1]",
+					"strict" : false
+				},
+				{
+					"name" : "output_digit[2]",
+					"strict" : false
+				},
+				{
+					"name" : "output_digit[3]",
+					"strict" : false
+				},
+				{
+					"name" : "output_digit[4]",
+					"strict" : false
+				},
+				{
+					"name" : "output_digit[5]",
+					"strict" : false
+				},
+				{
+					"name" : "output_digit[6]",
+					"strict" : false
+				},
+				{
+					"name" : "state_LEDS[0]",
+					"strict" : false
+				},
+				{
+					"name" : "state_LEDS[1]",
+					"strict" : false
+				},
+				{
+					"name" : "state_LEDS[2]",
+					"strict" : false
+				},
+				{
+					"name" : "state_LEDS[3]",
+					"strict" : false
+				},
+				{
+					"name" : "dispense_gruel",
+					"strict" : false
+				},
+				{
+					"name" : "coin[1]",
+					"strict" : false
+				},
+				{
+					"name" : "coin[2]",
+					"strict" : false
+				},
+				{
+					"name" : "coin[0]",
+					"strict" : false
+				},
+				{
+					"name" : "clock_50MHz",
+					"strict" : false
+				},
+				{
+					"name" : "async_Reset",
+					"strict" : false
+				},
+				{
+					"name" : "button_Clock",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

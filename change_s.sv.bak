@@ -1,0 +1,29 @@
+module change_s(
+	input logic  A[3:0], 
+	output logic S[6:0],    // 7-segment output to display change
+	output logic f_led, s_led // LED controls for Florin and Shilling
+);
+
+logic Y[8:0]; 16-bit output
+
+d416 (
+	.X0(A[0]),
+	.X1(A[1]),
+	.X2(A[2]),
+      .X3(A[3]),
+	.Y(Y)
+);
+
+// 7-segment display logic for change
+assign S[0] = ~(Y[7] | Y[8]);
+assign S[1] = ~(Y[6] | Y[7] | Y[8]);
+assign S[2] = ~(Y[6] | Y[8]);
+assign S[3] = ~(Y[7] | Y[8]);
+assign S[4] = ~(Y[7]);
+assign S[5] = 1;  // Keeps this segment off (Active Low HEX)
+assign S[6] = ~(Y[7] | Y[8]);
+
+assign fled = (Y[8] | Y[7]); // Florin LED lights up when Y[8] or Y[7] 
+assign sled = (Y[6] | Y[8]); // Shilling LED lights up when Y[6] or Y[8]
+
+endmodule

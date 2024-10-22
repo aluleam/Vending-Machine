@@ -1,0 +1,17 @@
+module encoder(
+
+
+input logic shilling,
+input logic florin,
+input logic crown,
+
+
+output logic encoded_value[1:0];
+
+);
+assign encoded_value[0] = crown | shilling;
+assign encoded_value[1] = crown | florin;
+
+
+
+endmodule

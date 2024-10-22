@@ -1,0 +1,19 @@
+module vendingMachine(
+
+input logic shilling,//input signal representing a shilling
+input logic florin, //input signal representing a florin( 2 shillings)
+input logic crown, // input signal representing a crown (5 shillings)
+input logic async_Reset, //Asynchronous, resets the machine
+input logic button_Clock, //clock signal triggered by a button press
+input logic clock_50MHz //50 MHz internal system clock for timing
+
+Outputs
+output logic dispense_gruel,
+output logic change_Display[6:0],// 7-seg, Displays the change
+output logic state_Display[6:0],// 7-seg, current state of the machine
+output logic florin_Change, // shows the change returned in florins
+output logic crown_Change,  // Indicates the change returned in crowns
+output logic shilling_Change, // The change returned in shillings
+output logic state_LEDS[3:0] // Visual indication of the current state of the vending machine
+
+);
