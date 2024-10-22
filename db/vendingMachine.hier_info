@@ -1,0 +1,448 @@
+|vendingMachine
+coin[0] => coin[0].IN1
+coin[1] => coin[1].IN1
+coin[2] => coin[2].IN1
+async_Reset => async_Reset.IN1
+button_Clock => button_Clock.IN1
+clock_50MHz => clock_50MHz.IN3
+state_digit[0] << outputResult:output_result_inst.state
+state_digit[1] << outputResult:output_result_inst.state
+state_digit[2] << outputResult:output_result_inst.state
+state_digit[3] << outputResult:output_result_inst.state
+state_digit[4] << outputResult:output_result_inst.state
+state_digit[5] << outputResult:output_result_inst.state
+state_digit[6] << outputResult:output_result_inst.state
+output_digit[0] << outputResult:output_result_inst.output_digit
+output_digit[1] << outputResult:output_result_inst.output_digit
+output_digit[2] << outputResult:output_result_inst.output_digit
+output_digit[3] << outputResult:output_result_inst.output_digit
+output_digit[4] << outputResult:output_result_inst.output_digit
+output_digit[5] << outputResult:output_result_inst.output_digit
+output_digit[6] << outputResult:output_result_inst.output_digit
+florin_Change << <GND>
+florin_change2 << <GND>
+shilling_Change << <GND>
+state_LEDS[0] << sflipflop[0].DB_MAX_OUTPUT_PORT_TYPE
+state_LEDS[1] << sflipflop[1].DB_MAX_OUTPUT_PORT_TYPE
+state_LEDS[2] << sflipflop[2].DB_MAX_OUTPUT_PORT_TYPE
+state_LEDS[3] << sflipflop[3].DB_MAX_OUTPUT_PORT_TYPE
+dispense_gruel << grueld416:decoder_inst.gruel
+
+
+|vendingMachine|debouncer:clock_clk
+A_noisy => Anext.IN1
+A_noisy => t_r.IN1
+A_noisy => t_r.IN1
+CLK50M => A~reg0.CLK
+CLK50M => COUNT[0].CLK
+CLK50M => COUNT[1].CLK
+CLK50M => COUNT[2].CLK
+CLK50M => COUNT[3].CLK
+CLK50M => COUNT[4].CLK
+CLK50M => COUNT[5].CLK
+CLK50M => COUNT[6].CLK
+CLK50M => COUNT[7].CLK
+CLK50M => COUNT[8].CLK
+CLK50M => COUNT[9].CLK
+CLK50M => COUNT[10].CLK
+CLK50M => COUNT[11].CLK
+CLK50M => COUNT[12].CLK
+CLK50M => COUNT[13].CLK
+CLK50M => COUNT[14].CLK
+CLK50M => COUNT[15].CLK
+A <= A~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vendingMachine|debouncer:reset_d
+A_noisy => Anext.IN1
+A_noisy => t_r.IN1
+A_noisy => t_r.IN1
+CLK50M => A~reg0.CLK
+CLK50M => COUNT[0].CLK
+CLK50M => COUNT[1].CLK
+CLK50M => COUNT[2].CLK
+CLK50M => COUNT[3].CLK
+CLK50M => COUNT[4].CLK
+CLK50M => COUNT[5].CLK
+CLK50M => COUNT[6].CLK
+CLK50M => COUNT[7].CLK
+CLK50M => COUNT[8].CLK
+CLK50M => COUNT[9].CLK
+CLK50M => COUNT[10].CLK
+CLK50M => COUNT[11].CLK
+CLK50M => COUNT[12].CLK
+CLK50M => COUNT[13].CLK
+CLK50M => COUNT[14].CLK
+CLK50M => COUNT[15].CLK
+A <= A~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vendingMachine|encoder:enc
+coins[0] => encoded_value.OUTPUTSELECT
+coins[0] => encoded_value.OUTPUTSELECT
+coins[1] => encoded_value.OUTPUTSELECT
+coins[1] => encoded_value.OUTPUTSELECT
+coins[2] => encoded_value.DATAA
+coins[2] => encoded_value.DATAA
+encoded_value[0] <= encoded_value.DB_MAX_OUTPUT_PORT_TYPE
+encoded_value[1] <= encoded_value.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vendingMachine|state:stateInst
+cState[0] => nextS.IN1
+cState[0] => nextS.IN1
+cState[0] => nextS.IN0
+cState[0] => nextS.IN1
+cState[0] => nextS.IN0
+cState[0] => nextS.IN1
+cState[0] => nextS.IN0
+cState[0] => nextS.IN0
+cState[0] => nextS.IN0
+cState[0] => nextS.IN0
+cState[0] => nextS.IN1
+cState[1] => nextS.IN1
+cState[1] => nextS.IN1
+cState[1] => nextS.IN1
+cState[1] => nextS.IN1
+cState[1] => nextS.IN1
+cState[1] => nextS.IN0
+cState[1] => nextS.IN1
+cState[1] => nextS.IN1
+cState[1] => nextS.IN1
+cState[1] => nextS.IN1
+cState[1] => nextS.IN1
+cState[1] => nextS.IN1
+cState[1] => nextS.IN1
+cState[1] => nextS.IN1
+cState[1] => nextS.IN1
+cState[1] => nextS.IN1
+cState[1] => nextS.IN1
+cState[1] => nextS.IN1
+cState[2] => nextS.IN1
+cState[2] => nextS.IN1
+cState[2] => nextS.IN1
+cState[2] => nextS.IN1
+cState[2] => nextS.IN1
+cState[2] => nextS.IN1
+cState[2] => nextS.IN1
+cState[2] => nextS.IN1
+cState[2] => nextS.IN1
+cState[2] => nextS.IN1
+cState[2] => nextS.IN1
+cState[2] => nextS.IN1
+cState[2] => nextS.IN1
+cState[2] => nextS.IN1
+cState[2] => nextS.IN1
+cState[2] => nextS.IN1
+cState[2] => nextS.IN1
+cState[2] => nextS.IN1
+cState[2] => nextS.IN1
+cState[2] => nextS.IN1
+cState[2] => nextS.IN1
+cState[2] => nextS.IN1
+cState[2] => nextS.IN1
+cState[3] => nextS.IN1
+cState[3] => nextS.IN1
+cState[3] => nextS.IN1
+cState[3] => nextS.IN1
+cState[3] => nextS.IN1
+cState[3] => nextS.IN1
+cState[3] => nextS.IN1
+cState[3] => nextS.IN1
+cState[3] => nextS.IN1
+cState[3] => nextS.IN1
+cState[3] => nextS.IN1
+cState[3] => nextS.IN1
+cState[3] => nextS.IN1
+cState[3] => nextS.IN1
+cState[3] => nextS.IN1
+cState[3] => nextS.IN1
+cState[3] => nextS.IN1
+cState[3] => nextS.IN1
+cState[3] => nextS.IN1
+cState[3] => nextS.IN1
+cState[3] => nextS.IN1
+cState[3] => nextS.IN1
+cState[3] => nextS.IN1
+coin[0] => nextS.IN0
+coin[0] => nextS.IN1
+coin[0] => nextS.IN1
+coin[0] => nextS.IN0
+coin[0] => nextS.IN1
+coin[0] => nextS.IN0
+coin[0] => nextS.IN0
+coin[1] => nextS.IN1
+coin[1] => nextS.IN1
+coin[1] => nextS.IN1
+coin[1] => nextS.IN1
+coin[1] => nextS.IN1
+coin[1] => nextS.IN1
+coin[1] => nextS.IN1
+coin[1] => nextS.IN1
+nextS[0] <= nextS.DB_MAX_OUTPUT_PORT_TYPE
+nextS[1] <= nextS.DB_MAX_OUTPUT_PORT_TYPE
+nextS[2] <= nextS.DB_MAX_OUTPUT_PORT_TYPE
+nextS[3] <= nextS.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vendingMachine|all_dffs:dffs
+nextS[0] => nextS[0].IN1
+nextS[1] => nextS[1].IN1
+nextS[2] => nextS[2].IN1
+nextS[3] => nextS[3].IN1
+async_Reset => async_Reset.IN4
+button_Clock => button_Clock.IN1
+clock_50MHz => clock_50MHz.IN1
+sflipflop[0] <= D_FF_neg:D0.Q
+sflipflop[1] <= D_FF_neg:D1.Q
+sflipflop[2] <= D_FF_neg:D2.Q
+sflipflop[3] <= D_FF_neg:D3.Q
+
+
+|vendingMachine|all_dffs:dffs|debouncer:db_inst
+A_noisy => Anext.IN1
+A_noisy => t_r.IN1
+A_noisy => t_r.IN1
+CLK50M => A~reg0.CLK
+CLK50M => COUNT[0].CLK
+CLK50M => COUNT[1].CLK
+CLK50M => COUNT[2].CLK
+CLK50M => COUNT[3].CLK
+CLK50M => COUNT[4].CLK
+CLK50M => COUNT[5].CLK
+CLK50M => COUNT[6].CLK
+CLK50M => COUNT[7].CLK
+CLK50M => COUNT[8].CLK
+CLK50M => COUNT[9].CLK
+CLK50M => COUNT[10].CLK
+CLK50M => COUNT[11].CLK
+CLK50M => COUNT[12].CLK
+CLK50M => COUNT[13].CLK
+CLK50M => COUNT[14].CLK
+CLK50M => COUNT[15].CLK
+A <= A~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vendingMachine|all_dffs:dffs|D_FF_neg:D0
+D => Q~reg0.DATAIN
+D => Qb~reg0.DATAIN
+CLKb => Qb~reg0.CLK
+CLKb => Q~reg0.CLK
+RSTb => Qb~reg0.PRESET
+RSTb => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Qb <= Qb~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vendingMachine|all_dffs:dffs|D_FF_neg:D1
+D => Q~reg0.DATAIN
+D => Qb~reg0.DATAIN
+CLKb => Qb~reg0.CLK
+CLKb => Q~reg0.CLK
+RSTb => Qb~reg0.PRESET
+RSTb => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Qb <= Qb~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vendingMachine|all_dffs:dffs|D_FF_neg:D2
+D => Q~reg0.DATAIN
+D => Qb~reg0.DATAIN
+CLKb => Qb~reg0.CLK
+CLKb => Q~reg0.CLK
+RSTb => Qb~reg0.PRESET
+RSTb => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Qb <= Qb~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vendingMachine|all_dffs:dffs|D_FF_neg:D3
+D => Q~reg0.DATAIN
+D => Qb~reg0.DATAIN
+CLKb => Qb~reg0.CLK
+CLKb => Q~reg0.CLK
+RSTb => Qb~reg0.PRESET
+RSTb => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Qb <= Qb~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vendingMachine|grueld416:decoder_inst
+X0 => Y[5].IN1
+X0 => Y[7].IN1
+X0 => Y[8].IN1
+X0 => Y[6].IN1
+X0 => Y[4].IN1
+X1 => Y.IN1
+X1 => Y.IN1
+X1 => Y.IN1
+X2 => Y.IN0
+X2 => Y.IN0
+X3 => Y.IN1
+X3 => Y.IN1
+gruel <= gruel.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vendingMachine|outputResult:output_result_inst
+cState[0] => cState[0].IN2
+cState[1] => cState[1].IN2
+cState[2] => cState[2].IN2
+cState[3] => cState[3].IN2
+state[0] <= seven_seg:seven.led
+state[1] <= seven_seg:seven.led
+state[2] <= seven_seg:seven.led
+state[3] <= seven_seg:seven.led
+state[4] <= seven_seg:seven.led
+state[5] <= seven_seg:seven.led
+state[6] <= seven_seg:seven.led
+output_digit[0] <= change_s:change.S
+output_digit[1] <= change_s:change.S
+output_digit[2] <= change_s:change.S
+output_digit[3] <= change_s:change.S
+output_digit[4] <= change_s:change.S
+output_digit[5] <= change_s:change.S
+output_digit[6] <= change_s:change.S
+florin <= <GND>
+florin_c <= <GND>
+shilling <= <GND>
+dispense <= <GND>
+
+
+|vendingMachine|outputResult:output_result_inst|seven_seg:seven
+switch[0] => switch[0].IN1
+switch[1] => switch[1].IN1
+switch[2] => switch[2].IN1
+switch[3] => switch[3].IN1
+led[0] <= led.DB_MAX_OUTPUT_PORT_TYPE
+led[1] <= led.DB_MAX_OUTPUT_PORT_TYPE
+led[2] <= led.DB_MAX_OUTPUT_PORT_TYPE
+led[3] <= led.DB_MAX_OUTPUT_PORT_TYPE
+led[4] <= led.DB_MAX_OUTPUT_PORT_TYPE
+led[5] <= led.DB_MAX_OUTPUT_PORT_TYPE
+led[6] <= led.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vendingMachine|outputResult:output_result_inst|seven_seg:seven|d416:decode
+X0 => Y.IN1
+X0 => Y.IN1
+X0 => Y.IN1
+X0 => Y.IN1
+X0 => Y.IN1
+X0 => Y.IN1
+X0 => Y.IN1
+X0 => Y.IN1
+X0 => Y.IN1
+X1 => Y.IN1
+X1 => Y.IN1
+X1 => Y.IN1
+X1 => Y.IN1
+X1 => Y.IN1
+X2 => Y.IN0
+X2 => Y.IN0
+X2 => Y.IN0
+X3 => Y.IN1
+X3 => Y.IN1
+X3 => Y.IN1
+Y[0] <= Y.DB_MAX_OUTPUT_PORT_TYPE
+Y[1] <= Y.DB_MAX_OUTPUT_PORT_TYPE
+Y[2] <= Y.DB_MAX_OUTPUT_PORT_TYPE
+Y[3] <= Y.DB_MAX_OUTPUT_PORT_TYPE
+Y[4] <= Y.DB_MAX_OUTPUT_PORT_TYPE
+Y[5] <= Y.DB_MAX_OUTPUT_PORT_TYPE
+Y[6] <= Y.DB_MAX_OUTPUT_PORT_TYPE
+Y[7] <= Y.DB_MAX_OUTPUT_PORT_TYPE
+Y[8] <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vendingMachine|outputResult:output_result_inst|change_s:change
+A[0] => Equal0.IN3
+A[0] => Equal1.IN0
+A[0] => Equal2.IN3
+A[0] => Equal3.IN1
+A[0] => Equal4.IN3
+A[0] => Equal5.IN1
+A[0] => Equal6.IN3
+A[0] => Equal7.IN2
+A[0] => Equal8.IN3
+A[1] => Equal0.IN2
+A[1] => Equal1.IN3
+A[1] => Equal2.IN0
+A[1] => Equal3.IN0
+A[1] => Equal4.IN2
+A[1] => Equal5.IN3
+A[1] => Equal6.IN1
+A[1] => Equal7.IN1
+A[1] => Equal8.IN2
+A[2] => Equal0.IN1
+A[2] => Equal1.IN2
+A[2] => Equal2.IN2
+A[2] => Equal3.IN3
+A[2] => Equal4.IN0
+A[2] => Equal5.IN0
+A[2] => Equal6.IN0
+A[2] => Equal7.IN0
+A[2] => Equal8.IN1
+A[3] => Equal0.IN0
+A[3] => Equal1.IN1
+A[3] => Equal2.IN1
+A[3] => Equal3.IN2
+A[3] => Equal4.IN1
+A[3] => Equal5.IN2
+A[3] => Equal6.IN2
+A[3] => Equal7.IN3
+A[3] => Equal8.IN0
+S[0] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[1] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[2] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[3] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[4] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[5] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[6] <= S.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vendingMachine|change_s:changeDiS
+A[0] => Equal0.IN3
+A[0] => Equal1.IN0
+A[0] => Equal2.IN3
+A[0] => Equal3.IN1
+A[0] => Equal4.IN3
+A[0] => Equal5.IN1
+A[0] => Equal6.IN3
+A[0] => Equal7.IN2
+A[0] => Equal8.IN3
+A[1] => Equal0.IN2
+A[1] => Equal1.IN3
+A[1] => Equal2.IN0
+A[1] => Equal3.IN0
+A[1] => Equal4.IN2
+A[1] => Equal5.IN3
+A[1] => Equal6.IN1
+A[1] => Equal7.IN1
+A[1] => Equal8.IN2
+A[2] => Equal0.IN1
+A[2] => Equal1.IN2
+A[2] => Equal2.IN2
+A[2] => Equal3.IN3
+A[2] => Equal4.IN0
+A[2] => Equal5.IN0
+A[2] => Equal6.IN0
+A[2] => Equal7.IN0
+A[2] => Equal8.IN1
+A[3] => Equal0.IN0
+A[3] => Equal1.IN1
+A[3] => Equal2.IN1
+A[3] => Equal3.IN2
+A[3] => Equal4.IN1
+A[3] => Equal5.IN2
+A[3] => Equal6.IN2
+A[3] => Equal7.IN3
+A[3] => Equal8.IN0
+S[0] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[1] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[2] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[3] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[4] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[5] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[6] <= S.DB_MAX_OUTPUT_PORT_TYPE
+
+

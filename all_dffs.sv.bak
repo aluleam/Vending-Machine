@@ -1,0 +1,44 @@
+module all_dffs(
+    input logic [3:0] nextS,       // Next state from the state logic
+    input logic async_Reset,       // Asynchronous reset for the machine
+    input logic button_Clock,      // Clock signal triggered by a button press
+    input logic clock_50MHz,       // 50 MHz internal system clock for timing
+    output logic [3:0] sflipflop   // Output for the current state
+);
+
+logic db, reset_db;               // Debounced clock and reset signals
+
+// Debouncing the button clock and async reset
+debouncer clock_clk(.A_noisy(button_Clock), .CLK50M(clock_50MHz), .A(db));
+debouncer reset_d(.A_noisy(async_Reset), .CLK50M(clock_50MHz), .A(reset_db));
+
+// D flip-flop instances for storing the state
+D_FF_neg D0 (
+    .D(nextS[0]),
+    .CLKb(db),
+    .RSTb(reset_db),
+    .Q(sflipflop[0])
+);
+
+D_FF_neg D1 (
+    .D(nextS[1]),
+    .CLKb(db),
+    .RSTb(reset_db),
+    .Q(sflipflop[1])
+);
+
+D_FF_neg D2 (
+    .D(nextS[2]),
+    .CLKb(db),
+    .RSTb(reset_db),
+    .Q(sflipflop[2])
+);
+
+D_FF_neg D3 (
+    .D(nextS[3]),
+    .CLKb(db),
+    .RSTb(reset_db),
+    .Q(sflipflop[3])
+);
+
+endmodule

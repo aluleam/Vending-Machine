@@ -1,0 +1,20 @@
+module d416 (
+	input  logic X0, X1, X2, X3,  // 4 inputs
+	output gruel;
+	
+);
+
+logic Y[8:0]; // 9-bit logic array to store state
+assign y[0]  = ~X3 & ~X2 & ~X1 & ~X0;  // 0 shillings
+assign y[1]  = ~X3 & ~X2 & ~X1 &  X0;  // 1 shilling
+assign y[2]  = ~X3 & ~X2 &  X1 & ~X0;  // 2 shillings
+assign y[3]  = ~X3 & ~X2 &  X1 &  X0;  // 3 shillings
+assign y[4]  = ~X3 &  X2 & ~X1 & ~X0;  // 4 shillings
+assign y[5]  = ~X3 &  X2 & ~X1 &  X0;  // 5 shillings
+assign y[6]  = ~X3 &  X2 &  X1 & ~X0;  // 6 shillings
+assign y[7]  = ~X3 &  X2 &  X1 &  X0;  // 7 shillings
+assign y[8]  =  X3 & ~X2 & ~X1 & ~X0;  // 8 shillings (maximum)
+
+assign gruel = Y[5] | Y[6] | Y[7] | Y[8];
+
+endmodule
