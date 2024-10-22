@@ -1,0 +1,16 @@
+module seven_seg(
+input logic [3:0]switch,
+output logic [6:0]led
+);
+logic [15:0]num;
+d416 decode(.X(switch[3:0]), .Y(num[15:0]));
+
+assign led[0] = ~(num[0] | num[2] | num[3] | num[5] | num[6] | num[7] | num[8] | num[9] | num[10] | num[12] | num[14] | num[15]);
+assign led[1] = ~(num[0] | num[1] | num[3] | num[4] | num[7] | num[8] | num[9] | num[10] | num[13] | num[14] | num[15] | num[0]);
+assign led[2] = ~(num[0] | num[1] | num[3] | num[4] | num[5] | num[6] | num[7] | num[8] | num[9] | num[10] | num[11] | num[13]);
+assign led[3] = ~(num[0] | num[2] | num[3] | num[5] | num[6] | num[7] | num[8] | num[9] | num[10] | num[12] | num[14] | num[0]);
+assign led[4] = ~(num[0] | num[2] | num[3] | num[5] | num[6] | num[7] | num[8] | num[9] | num[10] | num[12] | num[14] | num[0]);
+assign led[5] = ~(num[0] | num[2] | num[3] | num[5] | num[6] | num[7] | num[8] | num[9] | num[10] | num[12] | num[14] | num[0]);
+assign led[6] = ~(num[0] | num[2] | num[3] | num[5] | num[6] | num[7] | num[8] | num[9] | num[10] | num[12] | num[14] | num[0]);
+
+endmodule

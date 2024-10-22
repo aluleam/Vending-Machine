@@ -1,0 +1,101 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'clock_50MHz'
+Slack : -4.107
+TNS   : -157.221
+
+Type  : Slow 1200mV 85C Model Setup 'all_dffs:dffs|debouncer:db_inst|A'
+Slack : -1.338
+TNS   : -4.264
+
+Type  : Slow 1200mV 85C Model Hold 'all_dffs:dffs|debouncer:db_inst|A'
+Slack : 0.345
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'clock_50MHz'
+Slack : 0.628
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'all_dffs:dffs|debouncer:db_inst|A'
+Slack : -0.925
+TNS   : -3.700
+
+Type  : Slow 1200mV 85C Model Removal 'all_dffs:dffs|debouncer:db_inst|A'
+Slack : 1.316
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clock_50MHz'
+Slack : -3.000
+TNS   : -74.553
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'all_dffs:dffs|debouncer:db_inst|A'
+Slack : -1.403
+TNS   : -5.612
+
+Type  : Slow 1200mV 0C Model Setup 'clock_50MHz'
+Slack : -3.739
+TNS   : -141.494
+
+Type  : Slow 1200mV 0C Model Setup 'all_dffs:dffs|debouncer:db_inst|A'
+Slack : -1.103
+TNS   : -3.509
+
+Type  : Slow 1200mV 0C Model Hold 'all_dffs:dffs|debouncer:db_inst|A'
+Slack : 0.311
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'clock_50MHz'
+Slack : 0.580
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'all_dffs:dffs|debouncer:db_inst|A'
+Slack : -0.862
+TNS   : -3.448
+
+Type  : Slow 1200mV 0C Model Removal 'all_dffs:dffs|debouncer:db_inst|A'
+Slack : 1.318
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clock_50MHz'
+Slack : -3.000
+TNS   : -74.553
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'all_dffs:dffs|debouncer:db_inst|A'
+Slack : -1.403
+TNS   : -5.612
+
+Type  : Fast 1200mV 0C Model Setup 'clock_50MHz'
+Slack : -1.287
+TNS   : -37.523
+
+Type  : Fast 1200mV 0C Model Setup 'all_dffs:dffs|debouncer:db_inst|A'
+Slack : -0.021
+TNS   : -0.021
+
+Type  : Fast 1200mV 0C Model Hold 'all_dffs:dffs|debouncer:db_inst|A'
+Slack : 0.147
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'clock_50MHz'
+Slack : 0.243
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'all_dffs:dffs|debouncer:db_inst|A'
+Slack : -0.120
+TNS   : -0.480
+
+Type  : Fast 1200mV 0C Model Removal 'all_dffs:dffs|debouncer:db_inst|A'
+Slack : 0.772
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clock_50MHz'
+Slack : -3.000
+TNS   : -55.900
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'all_dffs:dffs|debouncer:db_inst|A'
+Slack : -1.000
+TNS   : -4.000
+
+------------------------------------------------------------

@@ -1,0 +1,14 @@
+module outputResult(
+
+
+input logic state[3:0],
+input logic change[1:0],
+
+output logic shilling,
+output logic florin, 
+output logic crown,
+
+
+seven_seg seg(.switch(state[3:0]).
+
+);
