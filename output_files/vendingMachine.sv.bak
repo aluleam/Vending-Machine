@@ -1,0 +1,24 @@
+module dec416 (
+
+input logic [3:0]decIn,
+output logic [15:0]Output
+);
+
+assign Output[0] = ~decIn[3] & ~decIn[2] & ~decIn[1] & ~decIn[0];
+assign Output[1] = ~decIn[3] & ~decIn[2] & ~decIn[1] & decIn[0];
+assign Output[2] = ~decIn[3] & ~decIn[2] & decIn[1] & ~decIn[0];
+assign Output[3] = ~decIn[3] & ~decIn[2] & decIn[1] & decIn[0];
+assign Output[4] = ~decIn[3] & decIn[2] & ~decIn[1] & ~decIn[0];
+assign Output[5] = ~decIn[3] & decIn[2] & ~decIn[1] & decIn[0];
+assign Output[6] = ~decIn[3] & decIn[2] & decIn[1] & ~decIn[0];
+assign Output[7] = ~decIn[3] & decIn[2] & decIn[1] & decIn[0];
+assign Output[8] = decIn[3] & ~decIn[2] & ~decIn[1] & ~decIn[0];
+assign Output[9] = decIn[3] & ~decIn[2] & ~decIn[1] & decIn[0];
+assign Output[10] = decIn[3] & ~decIn[2] & decIn[1] & ~decIn[0];
+assign Output[11] = decIn[3] & ~decIn[2] & decIn[1] & decIn[0];
+assign Output[12] = decIn[3] & decIn[2] & ~decIn[1] & ~decIn[0];
+assign Output[13] = decIn[3] & decIn[2] & ~decIn[1] & decIn[0];
+assign Output[14] = decIn[3] & decIn[2] & decIn[1] & ~decIn[0];
+assign Output[15] = decIn[3] & decIn[2] & decIn[1] & decIn[0];
+
+endmodule
